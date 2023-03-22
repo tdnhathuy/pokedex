@@ -2,8 +2,8 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Test Auto deploy ver2</h1>
+    <div className="mt-4 p-10 bg-slate-300">
+      <h1>Setup tailwind</h1>
     </div>
   );
 }
