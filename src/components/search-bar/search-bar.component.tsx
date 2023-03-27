@@ -53,7 +53,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export const SearchAppBar = () => {
   const location = useLocation();
-  console.log("location", location);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
