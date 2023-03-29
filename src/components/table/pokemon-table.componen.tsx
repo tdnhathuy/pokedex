@@ -10,7 +10,7 @@ export const PokemonTable = (props: PokemonTableProps) => {
   const { pokemons } = props;
 
   return (
-    <Grid container className="p-6" columnGap={2} justifyContent="center">
+    <Grid container className="p-6" columnGap={2} rowGap={4} justifyContent="center">
       {pokemons.map((pkm) => {
         return (
           <Grid item xs={2} md={2} lg={1.5}>
