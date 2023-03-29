@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import { PokemonTable } from "../../components/table/pokemon-table.componen";
 import { thunkGetListPokemon } from "../../redux/action/pokemon.action";

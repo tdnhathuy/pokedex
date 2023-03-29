@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import { IPokemon } from "../../redux/api/pokemon.interface";
 import { PokemonCard } from "../card/pokemon-card.component";
 
@@ -9,10 +10,14 @@ export const PokemonTable = (props: PokemonTableProps) => {
   const { pokemons } = props;
 
   return (
-    <div className="p-6">
+    <Grid container className="p-6" columnGap={2} justifyContent="center">
       {pokemons.map((pkm) => {
-        return <PokemonCard {...pkm} />;
+        return (
+          <Grid item xs={2} md={2} lg={1.5}>
+            <PokemonCard {...pkm} />
+          </Grid>
+        );
       })}
-    </div>
+    </Grid>
   );
 };
