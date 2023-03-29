@@ -21,5 +21,5 @@ export const ROUTES: IRoute[] = [
   { ref: Pages.Auth, page: AuthPage, name: "AuthPage" },
   { ref: Pages.Home, page: HomePage, name: "HomePage" },
   { ref: Pages.Search, page: SearchPage, name: "SearchPage" },
-  { ref: Pages.Search, page: DetailPage, name: "DetailPage" },
+  { ref: Pages.Detail, page: DetailPage, name: "DetailPage" },
 ];

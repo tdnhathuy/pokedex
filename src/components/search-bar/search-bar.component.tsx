@@ -1,4 +1,4 @@
-import MenuIcon from "@mui/icons-material/Menu";
+import { ArrowBackIos, Home } from "@mui/icons-material";
 import SearchIcon from "@mui/icons-material/Search";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -7,7 +7,8 @@ import InputBase from "@mui/material/InputBase";
 import { alpha, styled } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { useLocation } from "react-router-dom";
+import { Routes, useLocation, useNavigate } from "react-router-dom";
+import { ROUTES } from "../../routes/config.routes";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -50,9 +51,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-
 export const SearchAppBar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const isRootPage = location.pathname === "/";
+
+  const namePage = ROUTES.find((x) => x.ref === location.pathname)?.name || "";
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -63,16 +69,18 @@ export const SearchAppBar = () => {
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
+            onClick={() => navigate(-1)}
           >
-            <MenuIcon />
+            {isRootPage ? <Home /> : <ArrowBackIos />}
           </IconButton>
+
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            {location.pathname}
+            {namePage}
           </Typography>
           <Search>
             <SearchIconWrapper>

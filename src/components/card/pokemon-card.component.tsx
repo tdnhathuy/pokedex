@@ -1,7 +1,8 @@
-import { CardMedia } from "@mui/material";
+import { CardMedia, Grid, Link } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import { Box } from "@mui/system";
 import { upperFirst, values } from "lodash";
 import { useNavigate } from "react-router-dom";
 import { IPokemon } from "../../redux/api/pokemon.interface";
@@ -13,6 +14,18 @@ export const PokemonCard = (pokemon: IPokemon) => {
     .flat() as string[];
 
   const navigate = useNavigate();
+
+  const onClickCard = () => {
+    navigate(Pages.Detail);
+  };
+
+  return (
+    <Box onClick={onClickCard}>
+      <Grid container>
+        <Box component={"img"} src={images[0]} />
+      </Grid>
+    </Box>
+  );
 
   return (
     <Card
