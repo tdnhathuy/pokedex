@@ -4,10 +4,10 @@ import { HomePage } from "../pages/home/home.page";
 import { SearchPage } from "../pages/search/search.page";
 
 export enum Pages {
-  Auth = "/",
-  Home = "/home",
-  Search = "/search",
-  Detail = "/detail",
+  Auth = "/pokedex/",
+  Home = "/pokedex/home",
+  Search = "/pokedex/search",
+  Detail = "/pokedex/detail",
 }
 
 interface IRoute {
