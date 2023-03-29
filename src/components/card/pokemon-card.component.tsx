@@ -1,6 +1,3 @@
-import { CardMedia, Grid, Link } from "@mui/material";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/system";
 import { upperFirst, values } from "lodash";
@@ -17,7 +14,7 @@ export const PokemonCard = (pokemon: IPokemon) => {
   const navigate = useNavigate();
 
   const onClickCard = () => {
-    navigate(Pages.Detail);
+    navigate(Pages.Detail, { state: { pokemon } });
   };
 
   return (

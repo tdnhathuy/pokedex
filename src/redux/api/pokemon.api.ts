@@ -1,7 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IPokemon } from "./pokemon.interface";
-
-type Pokemon = {};
 
 // Define a service using a base URL and expected endpoints
 export const pokemonApi = createApi({
